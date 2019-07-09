@@ -14,11 +14,15 @@ get_display = (el) => {
 		getComputedStyle(el, null).display;
 }
 
-collapse_all = () => {
+collapse_all = (collapse = true) => {
 	let els = ['collapsible_left', 'collapsible_right'];
-	// TODO: left to play some dota
-};
-
-display_all = () => {
-
+	if (collapse) {
+		els.forEach(el => {
+			document.getElementById(el).style.display = 'none';
+		});
+	} else {
+		els.forEach(el => {
+			document.getElementById(el).style.display = 'block';
+		});
+	}
 };
